@@ -30,5 +30,5 @@ download() {
 
 export -f download
 
-# Use GNU Parallel to run downloads in parallel
-parallel --will-cite -a "$filename" -j "$num_jobs" download
+# Use GNU Parallel to run downloads in parallel with progress bar
+parallel --will-cite --progress -a "$filename" -j "$num_jobs" download
