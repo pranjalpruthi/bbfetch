@@ -1,12 +1,40 @@
+
 # BBFetch Tool
 
 BBFetch is a powerful shell script designed to facilitate the batch downloading of genomic data from a specified list of accession numbers. Utilizing GNU Parallel, BBFetch efficiently manages multiple downloads in parallel, significantly reducing the time required to download large datasets. The tool also incorporates integrity checks for each download, ensuring the reliability of the downloaded files.
 
 ## Prerequisites
 
-Before using BBFetch, ensure you have GNU Parallel installed on your system. Additionally, the script must be made executable. Follow the instructions below to set up your environment.
+Before using BBFetch, there are a few prerequisites to ensure the script runs smoothly.
 
-### Installing GNU Parallel
+### NCBI Datasets CLI Tools
+
+BBFetch requires the NCBI Datasets CLI tools to be pre-installed. These tools are available as a Conda package and include both `datasets` and `dataformat` commands necessary for downloading and verifying genomic data.
+
+#### Install using Conda
+
+1. First, create a Conda environment:
+   ```bash
+
+   conda create -n ncbi_datasets
+   
+```
+2. Then, activate your new environment:
+   ```bash
+
+   conda activate ncbi_datasets
+   
+```
+3. Finally, install the datasets Conda package:
+   ```bash
+
+   conda install -c conda-forge ncbi-datasets-cli
+   
+```
+
+### GNU Parallel
+
+Ensure you have GNU Parallel installed on your system. This tool allows BBFetch to download multiple datasets concurrently.
 
 #### Linux (Debian/Ubuntu)
 
@@ -64,3 +92,4 @@ chmod +x bbfetch.sh
 
 Contributions to BBFetch are welcome! Please feel free to fork the repository, make your changes, and submit a pull request.
 
+---
