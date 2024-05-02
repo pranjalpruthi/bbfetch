@@ -16,7 +16,7 @@ mkdir -p "$log_dir"
 download() {
  accession=$1
  declare -i attempt=0
- while [[ $attempt -le $max_attempts ]]; do
+ while [[ $attempt -lt $max_attempts ]]; do
     echo "Attempt $(($attempt + 1)) of $max_attempts for accession $accession"
     if datasets download genome accession "$accession" --filename "$accession.zip"; then
       if unzip -t "$accession.zip" &>/dev/null; then
@@ -24,27 +24,23 @@ download() {
         return 0
       else
         echo "Download failed or file is corrupted for accession $accession, retrying..."
-        # Log the failed accession to the log file
-        echo "$accession" >> "$log_file"
       fi
     else
-      echo "Error occurred during download for accession $accession, retrying..."
-      # Log the failed accession to the log file
+      exit_status=$?
+      echo "Error occurred during download for accession $accession with exit status $exit_status, retrying..."
+    fi
+    # Log the failed accession to the log file only if it's the last attempt
+    if [[ $attempt -eq $((max_attempts - 1)) ]]; then
       echo "$accession" >> "$log_file"
+      echo "Maximum attempts reached, download failed for accession $accession."
     fi
     ((attempt++))
-    if [[ $attempt -eq $max_attempts ]]; then
-      echo "Maximum attempts reached, download failed for accession $accession."
-      # Log the failed accession to the log file
-      echo "$accession" >> "$log_file"
-      return 1
-    fi
  done
 }
 
-
 export -f download
 export log_file
+export max_attempts
 
-# Use GNU Parallel to run downloads in parallel with progress bar
+# Use GNU Parallel to run downloads in parallel with progress bar 
 parallel --will-cite --progress -a "$filename" -j "$num_jobs" download
