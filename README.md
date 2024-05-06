@@ -1,6 +1,6 @@
 # BBFetch Tool
 
-BBFetch is a powerful shell script designed to facilitate the batch downloading of genomic data from a specified list of accession numbers. Utilizing GNU Parallel, BBFetch efficiently manages multiple downloads in parallel, significantly reducing the time required to download large datasets. The tool also incorporates integrity checks for each download, ensuring the reliability of the downloaded files.
+BBFetch ⚡️Batch Biomolecular Fetch⚡️ is a powerful shell script designed to facilitate the batch downloading of genomic data from a specified list of accession numbers. Utilizing GNU Parallel, BBFetch efficiently manages multiple downloads in parallel, significantly reducing the time required to download large datasets. The tool also incorporates integrity checks for each download, ensuring the reliability of the downloaded files.
 
 ## Prerequisites
 
