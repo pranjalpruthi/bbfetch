@@ -1,6 +1,22 @@
-# BBFetch Tool
+# BBFetch 
+
+
+https://github.com/pranjalpruthi/bbfetch/assets/47497714/599f4ab5-88bc-493e-8dcf-0ad2ca0c6904
+
 
 BBFetch ⚡️Batch Biomolecular Fetch⚡️ is a powerful shell script designed to facilitate the batch downloading of genomic data from a specified list of accession numbers. Utilizing GNU Parallel, BBFetch efficiently manages multiple downloads in parallel, significantly reducing the time required to download large datasets. The tool also incorporates integrity checks for each download, ensuring the reliability of the downloaded files.
+
+
+
+## Updates
+
+ℹ️ **BBfetch-cli⚡ver-0.0.5 Updates:**
+
+✅ Auto sequence sent to file's folder and data folder for unzip datasets and dl folder for datasets  
+✅ Added Support for corrupt file validation✨  
+✅ ✨Auto Extraction finally😍  
+✅ L⭕G file maintenance💁🏻‍♂️ failed ids go there  
+
 
 ## Prerequisites
 
@@ -89,13 +105,5 @@ chmod +x bbfetch.sh
 
 Contributions to BBFetch are welcome! Please feel free to fork the repository, make your changes, and submit a pull request.
 
-## Updates
-
-ℹ️ **BBfetch-cli⚡ver-0.0.5 Updates:**
-
-✅ Auto sequence sent to file's folder and data folder for unzip datasets and dl folder for datasets  
-✅ Added Support for corrupt file validation✨  
-✅ ✨Auto Extraction finally😍  
-✅ L⭕G file maintenance💁🏻‍♂️ failed ids go there  
 
 ---
